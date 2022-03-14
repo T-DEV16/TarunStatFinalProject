@@ -4,39 +4,7 @@ date: "2/18/22"
 output: html_document
 ---
 
-## Introduction and Overview
-
-
-1.  Introduce the dataset and the questions of interest. 
-
-
-In this project, We are going to analyze multiple factors that we think may have impacted the overall spread of corona virus in 2021 in order to identify and analyze the prime variables resposible for the increase in cumulative cases, deaths, and overall mortality rate for the year 2021. We will first run five number summaries of the variables we analyze in order to find patterns or observations about the data. Then, we will use ANOVA modeling to investigate the randomly sampled (n=50 for each variable) variables time (as a matter of 3 groups for the year 2021. The groups are denoted as Group 1: January-April, Group 2: May-August, Group 3: September-December) and country (2 countries: United States of America and India) We will use covid data provided by WHO from a dataset that has regular daily updates. We will experiment with multiple ANOVA models but conclude with valid ANOVA models that yiueld fruitful results about the variables analyzed. This analysis will cover wether if any of the variables (time and country) have an effect of overall covid spread that is denoted in multiple ways (cumulative deaths, cumulative cases, death rate). The dataset (from WHO) used to derive these models hold covid data about the coronavirus throughout the world since its outbreak, and we will extract the entries of covid cases spefically in the year 2021 and in the countries of US and India. We will split these US and India covid entries into 6 datasets, each dataset having an interval of 4 months. These 4 month intervals are January-April, May-August, and September-December. After filtering our data into three distinct datasets, we will will examine the impact of time and country on cumulative cases in the US during the year 2021 via the means of the "Cumulative_cases", "Cumulative_death" and a "mortrate" (Death Rate) variable of each country's dataset. We will utilize any transformations necessary on the data in order to enable validity of all assumptions in our ANOVA models, some verified by normality tests and other analyses of residual plots (QQplots, etc).  After running multiple ANOVA models and verifying their assumptions we will determine which models (created from which variables) can most effectively explain our covid variables in the year 2021. If we find fruitful results about the time of year or country in terms of their impact on the covid variables from the WHO dataset in the year 2021, we can draw conclusions about these variables that can perhaps help the general public achieve higher protection from covid and its effects. We will draw these concusions that answer the following questions of interest. 
-
-## Questions of Interest
-
-1. We will find summary statistics of about cumulative covid cases, deaths, and death rate in order to understand the nature of these variables and find any potential patterns or observations about these cunulative covid variabes through 5 number summaries of the datasets.
-2. We will ask how the variable time of year (2021) affects overall mean cumulative covid cases by seeing wether if at least one of the three groups (Group 1: January-April, Group 2: May-August, Group 3: September-December) differ significantly from each other 
-3. We will determine wether the time of year and country variables both have an effect on overall mean cumulative covid cases, or if only one variable holds a significant impact on the covid data. This can help us determine if these variables can assist in covid public health and safety developed from avid model results. 
-
-The results of our project can help us determine the conditions where COVID spreads much faster based on data found from the US and India in the year 2021, and allow the general public to make improved adjustments in their quarantine plans and overall safety. 
-
-## Data Background
-
-
-2.  Review the background of the coronavirus pandemic. 
-
-SARS-CoV-2 is a virus that was exposed to humanity around the ending months of 2019 and proceeded to cause an entire pandemic through the year 2020, effectively disrupting society and forcing people to quarantine for their safety even today. Ever since then, WHO has made a dataset that holds information/statisttics about the cases and deaths caused by COVID from 2019 to today. This dataset is daily updated by WHO and reflects the most current status of COVID from its outbreak to the present, as COVID is still a prominent problem today. We will analyze this datset in order to study the background around the covid pandemic further and see if there are any possible patterns emitted by this pandemic. 
-
-
-
-
-
-
-## WHO COVID-19 data
-
-We will explore the WHO COVID-19 data in this project. You can take a look at the [weekly WHO COVID-19 update](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports) for reference.
 ## CODE BLOCK
-
 ```{r echo=TRUE, eval=TRUE}
 
 # 1) 
@@ -329,6 +297,43 @@ shapiro.test(twowayres)
 
 
 ```
+
+## Introduction and Overview
+
+
+
+
+1.  Introduce the dataset and the questions of interest. 
+
+
+In this project, We are going to analyze multiple factors that we think may have impacted the overall spread of corona virus in 2021 in order to identify and analyze the prime variables resposible for the increase in cumulative cases, deaths, and overall mortality rate for the year 2021. We will first run five number summaries of the variables we analyze in order to find patterns or observations about the data. Then, we will use ANOVA modeling to investigate the randomly sampled (n=50 for each variable) variables time (as a matter of 3 groups for the year 2021. The groups are denoted as Group 1: January-April, Group 2: May-August, Group 3: September-December) and country (2 countries: United States of America and India) We will use covid data provided by WHO from a dataset that has regular daily updates. We will experiment with multiple ANOVA models but conclude with valid ANOVA models that yiueld fruitful results about the variables analyzed. This analysis will cover wether if any of the variables (time and country) have an effect of overall covid spread that is denoted in multiple ways (cumulative deaths, cumulative cases, death rate). The dataset (from WHO) used to derive these models hold covid data about the coronavirus throughout the world since its outbreak, and we will extract the entries of covid cases spefically in the year 2021 and in the countries of US and India. We will split these US and India covid entries into 6 datasets, each dataset having an interval of 4 months. These 4 month intervals are January-April, May-August, and September-December. After filtering our data into three distinct datasets, we will will examine the impact of time and country on cumulative cases in the US during the year 2021 via the means of the "Cumulative_cases", "Cumulative_death" and a "mortrate" (Death Rate) variable of each country's dataset. We will utilize any transformations necessary on the data in order to enable validity of all assumptions in our ANOVA models, some verified by normality tests and other analyses of residual plots (QQplots, etc).  After running multiple ANOVA models and verifying their assumptions we will determine which models (created from which variables) can most effectively explain our covid variables in the year 2021. If we find fruitful results about the time of year or country in terms of their impact on the covid variables from the WHO dataset in the year 2021, we can draw conclusions about these variables that can perhaps help the general public achieve higher protection from covid and its effects. We will draw these concusions that answer the following questions of interest. 
+
+## Questions of Interest
+
+1. We will find summary statistics of about cumulative covid cases, deaths, and death rate in order to understand the nature of these variables and find any potential patterns or observations about these cunulative covid variabes through 5 number summaries of the datasets.
+2. We will ask how the variable time of year (2021) affects overall mean cumulative covid cases by seeing wether if at least one of the three groups (Group 1: January-April, Group 2: May-August, Group 3: September-December) differ significantly from each other 
+3. We will determine wether the time of year and country variables both have an effect on overall mean cumulative covid cases, or if only one variable holds a significant impact on the covid data. This can help us determine if these variables can assist in covid public health and safety developed from avid model results. 
+
+The results of our project can help us determine the conditions where COVID spreads much faster based on data found from the US and India in the year 2021, and allow the general public to make improved adjustments in their quarantine plans and overall safety. 
+
+## Data Background
+
+
+2.  Review the background of the coronavirus pandemic. 
+
+SARS-CoV-2 is a virus that was exposed to humanity around the ending months of 2019 and proceeded to cause an entire pandemic through the year 2020, effectively disrupting society and forcing people to quarantine for their safety even today. Ever since then, WHO has made a dataset that holds information/statisttics about the cases and deaths caused by COVID from 2019 to today. This dataset is daily updated by WHO and reflects the most current status of COVID from its outbreak to the present, as COVID is still a prominent problem today. We will analyze this datset in order to study the background around the covid pandemic further and see if there are any possible patterns emitted by this pandemic. 
+
+
+
+
+
+
+## WHO COVID-19 data
+
+We will explore the WHO COVID-19 data in this project. You can take a look at the [weekly WHO COVID-19 update](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports) for reference.
+## CODE BLOCK
+
+
 
 
 
@@ -743,7 +748,7 @@ We answer our second question of interest on wether group of time as a factor ha
 
 We answer our third question on wether the time factor and country factor both have an effect on mean cumulative covid case by finding that it is not possible. Partly due to the inability to verify the assumptions of a two-way model, we were unable to figure out a way in which time and country both significantly impact mean cumulative covid cases. This is further proven by the lower AIC shown by our one way ANOVA model compared to the run two way model. We answer this quesiton further by concluding that the time of year does indeed have an effect on mean cumulative covid cases, which means that actions can be taken given these results. We know that the mean cumulative covid cases variable will increase at different times, (perhaps higher in the winters and colder seasons), so we can efectively practice more quaranting skills during those times of high spread, while being more relaxed of quarantine during other seasons. 
 
-Our warning include the our inability to verify our assumptions like the two way ANOVA model. We also performed a square root transfromation onto the data which naturally skews the reality of the data. In the future we can polish our model data so it can pass our model assumptions without the use of powerful transformations which, while useful, may skew the true dataset. We also could do more with the one way ANOVA model, specifically determining which group of times have higher cumulative covid cases compared to others, allowing more elaboration of results. We also could determine the parameters of our data better in the future. Overall, this report yieled fruitful results that provides viable conclusions about factors like time and how they impact covid in 2021 that can potentially help public health and safety for corona today.
+Our warnings and caveats to our approach include the our inability to verify our assumptions like the two way ANOVA model. We also performed a square root transfromation onto the data which naturally skews the reality of the data. In the future we can polish our model data so it can pass our model assumptions without the use of powerful transformations which, while useful, may skew the true dataset. We also could do more with the one way ANOVA model, specifically determining which group of times have higher cumulative covid cases compared to others, allowing more elaboration of results. We also could determine the parameters of our data better in the future. Overall, this report yieled fruitful results that provides viable conclusions about factors like time and how they impact covid in 2021 that can potentially help public health and safety for corona today.
 
 
 Acknowledgements:
